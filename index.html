@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Drive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login -->
+  <section id="loginView" class="login-page">
+    <div class="login-card">
+      <div class="logo">D</div>
+      <p class="eyebrow">PERSONAL CLOUD STORAGE</p>
+      <h1>Welcome to My Drive</h1>
+      <p class="muted">Your files, organized in one place.</p>
+
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input id="username" required autocomplete="username"
+               placeholder="Enter username">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required
+               autocomplete="current-password"
+               placeholder="Enter password">
+
+        <button class="primary full" type="submit">Sign in →</button>
+        <p id="loginError" class="error" hidden>
+          Incorrect username or password.
+        </p>
+      </form>
+
+      <p class="notice">
+        Shared login is a convenience feature, not secure authentication.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <div id="driveView" class="layout" hidden>
+    <aside class="sidebar">
+      <a href="#" class="brand">
+        <span class="logo small">D</span>
+        <span>My Drive</span>
+      </a>
+
+      <p class="side-label">WORKSPACE</p>
+      <button class="nav active" type="button">▦ Overview</button>
+
+      <a id="allFilesLink" class="nav"
+         target="_blank" rel="noopener">▤ All files ↗</a>
+
+      <div class="sidebar-bottom">
+        <p class="storage-label">STORAGE</p>
+        <p class="storage-status">● Private GitHub repository</p>
+        <button id="logoutBtn" class="logout">↪ Sign out</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h1>Drive overview</h1>
+        </div>
+        <div class="avatar">PD</div>
+      </header>
+
+      <section class="banner">
+        <div>
+          <p class="eyebrow light">PERSONAL FILE SPACE</p>
+          <h2>Everything in its place.</h2>
+          <p>Store and manage your documents with GitHub.</p>
+        </div>
+        <div class="banner-symbol">▱</div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <div class="card-icon blue">↑</div>
+          <h3>Upload files</h3>
+          <p>Upload documents, images, ZIPs and project files.</p>
+          <a id="uploadLink" class="button primary"
+             target="_blank" rel="noopener">
+            Upload on GitHub ↗
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon purple">▤</div>
+          <h3>Browse files</h3>
+          <p>View repository files and download your documents.</p>
+          <a id="browseLink" class="button secondary"
+             target="_blank" rel="noopener">
+            Browse files ↗
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon green">＋</div>
+          <h3>Create a folder</h3>
+          <p>Create a folder by adding a file inside it on GitHub.</p>
+          <a id="createFolderLink" class="button secondary"
+             target="_blank" rel="noopener">
+            Create folder ↗
+          </a>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h3>My folders</h3>
+            <p>Quick access to your file categories.</p>
+          </div>
+          <input id="folderSearch" class="search"
+                 type="search" placeholder="Search folders...">
+        </div>
+
+        <div id="folderGrid" class="folder-grid"></div>
+        <p id="noFolders" class="muted" hidden>No matching folders.</p>
+      </section>
+
+      <section class="panel info-panel">
+        <h3>How your drive works</h3>
+        <p>
+          Your website runs on GitHub Pages. Your files are kept in a
+          separate private GitHub repository. GitHub handles permissions
+          and upload operations.
+        </p>
+      </section>
+
+      <footer>My Drive · Hosted on GitHub Pages</footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
